@@ -1,4 +1,4 @@
-<div class="d-flex">
+<!-- <div class="d-flex">
   <div
     *ngIf="personajes[0].apellido == 'Sanchez'"
     class="card"
@@ -84,28 +84,17 @@
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
-</div>
+</div> -->
 
 <hr />
-<h2>ngFor</h2>
 <h3>Cantidad de personajes: {{ personajes.length }}</h3>
-<div class="d-flex">
+<div class="">
   <div *ngFor="let personaje of personajes" class="card" style="width: 18rem">
-    <img class="card-img-top" src="{{ personaje.img }}" alt="Card image cap" />
-    <div class="card-body">
-      <h5 class="card-title">
-        {{ personaje.nombre + " " + personaje.apellido }}
-      </h5>
-      <p class="card-text">
-        {{ personaje.descripcion }}
-      </p>
-      <a
-        href="#"
-        class="btn"
-        [ngClass]="personaje.nombre == 'Morty' ? 'btn-primary' : 'btn-danger'"
-        >Go somewhere</a
-      >
-    </div>
+    <app-card
+      [personaje]="personaje"
+      (eventoSaludo)="ejecutarSaludo($event)"
+    ></app-card>
+    <br />
   </div>
 </div>
 
@@ -115,25 +104,10 @@
 <button class="btn btn-danger" (click)="onClick()">buscar personaje</button>
 
 <div *ngIf="personajeParaMostar" class="card" style="width: 18rem">
-  <img
-    class="card-img-top"
-    src="{{ personajeParaMostar.img }}"
-    alt="Card image cap"
-  />
-  <div class="card-body">
-    <h5 class="card-title">
-      {{ personajeParaMostar.nombre + " " + personajeParaMostar.apellido }}
-    </h5>
-    <p class="card-text">
-      {{ personajeParaMostar.descripcion }}
-    </p>
-    <a
-      href="#"
-      class="btn"
-      [ngClass]="personajeParaMostar.nombre == 'Morty' ? 'btn-primary' : 'btn-danger'"
-      >Go somewhere</a
-    >
-  </div>
+  <app-card
+    [personaje]="personajeParaMostar"
+    (eventoSaludo)="ejecutarSaludo($event)"
+  ></app-card>
 </div>
 
 <h3 [ngSwitch]="resultadoDelPartido">

@@ -1,0 +1,12 @@
+<img class="card-img-top" src="{{ personaje.image }}" alt="Card image cap" />
+<div class="card-body">
+  <h5 class="card-title">
+    {{ personaje.name + " id: " + personaje.id }}
+  </h5>
+  <p class="card-text">
+    {{ personaje.species + " " + personaje.status }}
+  </p>
+  <button (click)="eventoSaludo.emit(personaje)" class="btn btn-primary">
+    Go somewhere
+  </button>
+</div>
