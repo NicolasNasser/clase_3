@@ -62,4 +62,20 @@ export class AppComponent implements OnInit {
     console.log(personaje)
   }
 
+
+  eliminar(evento: any) {
+    console.log(evento)
+    console.log(this.personajes)
+    this.personajes = this.personajes.filter(personaje => personaje.id != evento.id)
+  }
+
+  agregarPersonaje() {
+    console.log(this.personajeSeleccionado)
+    //this.personajes.push(this.personajeParaMostar)
+    this.personajes.unshift(this.personajeParaMostar)
+    this.personajes.sort((a, b) => a.id - b.id)
+
+  }
+
+
 }

@@ -93,6 +93,7 @@
     <app-card
       [personaje]="personaje"
       (eventoSaludo)="ejecutarSaludo($event)"
+      (eliminar)="eliminar(personaje)"
     ></app-card>
     <br />
   </div>
@@ -102,11 +103,14 @@
 <p>Para que funcione tienes que poner el nombre igual que en el objeto</p>
 <input type="text" [(ngModel)]="personajeSeleccionado" />
 <button class="btn btn-danger" (click)="onClick()">buscar personaje</button>
-
+<button class="btn btn-primary" (click)="agregarPersonaje()">
+  Agregar personaje
+</button>
 <div *ngIf="personajeParaMostar" class="card" style="width: 18rem">
   <app-card
     [personaje]="personajeParaMostar"
     (eventoSaludo)="ejecutarSaludo($event)"
+    (eliminar)="eliminar(personajeParaMostar)"
   ></app-card>
 </div>
 

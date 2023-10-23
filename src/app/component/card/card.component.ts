@@ -10,6 +10,7 @@ export class CardComponent {
   @Input() personaje: any = {}
 
   @Output() eventoSaludo = new EventEmitter<any>();
+  @Output() eliminar = new EventEmitter<any>();
 
   constructor() {
 

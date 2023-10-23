@@ -7,6 +7,9 @@
     {{ personaje.species + " " + personaje.status }}
   </p>
   <button (click)="eventoSaludo.emit(personaje)" class="btn btn-primary">
-    Go somewhere
+    Saludo
+  </button>
+  <button (click)="eliminar.emit(personaje)" class="btn btn-danger">
+    Eliminar
   </button>
 </div>
